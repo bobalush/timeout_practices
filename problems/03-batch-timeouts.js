@@ -34,6 +34,12 @@ console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
 
 function batchTimeouts(callbacks, delays) {
   // Your code here
+  let timeoutObjs = [];
+  for (let i = 0; i < callbacks.length; i++) {
+    let timeoutObj = setTimeout(callbacks[i], delays[i]);
+    timeoutObjs.push(timeoutObj);
+  }
+  return timeoutObjs;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
